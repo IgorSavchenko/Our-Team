@@ -1,0 +1,34 @@
+// variables
+$c-grey: #666666;
+$c-yellow: #ffcc00;
+
+// mixins
+@mixin spaces-reset {
+  margin: 0;
+  padding: 0;
+  }
+
+// styles to all elements
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+// styles to body
+body {
+  font-family: 'Raleway', sans-serif;
+  // font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: $c-grey;
+}
+
+//google fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700|Raleway:400,500|Roboto:900');
+
+// internal sections
+@import "sections/header.scss";
+
+// internal blocks
+// @import "blocks/box.scss";
