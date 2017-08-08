@@ -80,14 +80,21 @@ body {
     position: absolute;
     top: 180px;
     transform: translateY(-50%);
-    font-size: 40px; }
-    .slider__arrow a {
-      text-decoration: none;
-      color: #ffcc00; }
+    font-size: 40px;
+    transition: all 0.3s ease; }
     .slider__arrow--left {
       left: -55px; }
     .slider__arrow--right {
       right: -45px; }
+    .slider__arrow a {
+      text-decoration: none;
+      color: #ffcc00; }
+    .slider__arrow--left:hover {
+      -webkit-transform: translateX(-1px);
+      transform: translateX(-1px); }
+    .slider__arrow--right:hover {
+      -webkit-transform: translateX(1px);
+      transform: translateX(1px); }
   .slider__image {
     display: block;
     max-width: 100%;
@@ -164,8 +171,6 @@ body {
     display: block;
     text-decoration: none;
     color: #cccccc; }
-    .slider__link:hover {
-      color: #ffcc00; }
   .slider__text {
     margin: 0;
     padding: 0;
@@ -195,7 +200,8 @@ body {
     padding: 6px 12px;
     border: 1px solid #ffcc00;
     font-family: 'Open Sans', sans-serif;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    transition: background 0.3s ease-in; }
     .slider__reference:hover {
       background: #ffcc00; }
 
@@ -216,5 +222,50 @@ body {
     border-radius: 50%; }
     .navigation__item:first-child, .navigation__item:last-child {
       background: #ffcc00; }
+
+/*CSS ANIMATION*/
+@-webkit-keyframes swing {
+  15% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px); }
+  30% {
+    -webkit-transform: translateX(-4px);
+    transform: translateX(-4px); }
+  40% {
+    -webkit-transform: translateX(3px);
+    transform: translateX(3px); }
+  50% {
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px); }
+  65% {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px); }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); } }
+@keyframes swing {
+  15% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px); }
+  30% {
+    -webkit-transform: translateX(-4px);
+    transform: translateX(-4px); }
+  40% {
+    -webkit-transform: translateX(3px);
+    transform: translateX(3px); }
+  50% {
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px); }
+  65% {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px); }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); } }
+.swing:hover {
+  -webkit-animation: swing 0.3s ease;
+  animation: swing 0.3s ease;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1; }
 
 /*# sourceMappingURL=main.css.map */

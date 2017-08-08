@@ -22,10 +22,7 @@
     top: 180px;
     transform: translateY(-50%);
     font-size: 40px;
-
-      & a {
-        @include link-styles-reset($c-yellow);
-      }
+    transition: all 0.3s ease;
 
       &--left {
         left: -55px;
@@ -34,6 +31,21 @@
       &--right {
         right: -45px;
       }
+
+      & a {
+        @include link-styles-reset($c-yellow);
+      }
+
+      &--left:hover {
+        -webkit-transform: translateX(-1px);
+        transform: translateX(-1px);
+      }
+
+      &--right:hover {
+        -webkit-transform: translateX(1px);
+        transform: translateX(1px);
+      }
+
   }
 
   &__image {
@@ -43,6 +55,7 @@
     object-fit: cover;
   }
 
+  // decorative elements around the photo
   &__line {
     position: absolute;
     display: block;
@@ -139,7 +152,7 @@
     @include link-styles-reset(#cccccc);
 
         &:hover {
-          color: $c-yellow;
+          // color: $c-yellow;
         }
   }
 
@@ -177,6 +190,7 @@
     border: 1px solid $c-yellow;
     font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
+    transition: background 0.3s ease-in;
 
       &:hover {
         background: $c-yellow;

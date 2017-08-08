@@ -3,7 +3,6 @@ $c-grey: #666666;
 $c-yellow: #ffcc00;
 $max-width: 1170px;
 
-
 // mixins
 @mixin spaces-reset {
   margin: 0;
@@ -36,5 +35,6 @@ body {
 // internal sections
 @import "sections/header.scss";
 @import "sections/slider.scss";
+@import "blocks/animation.scss"
 
 // internal blocks
