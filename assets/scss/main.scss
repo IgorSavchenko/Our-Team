@@ -1,12 +1,20 @@
 // variables
 $c-grey: #666666;
+$c-light-grey: #333333;
 $c-yellow: #ffcc00;
+$max-width: 1170px;
+
 
 // mixins
 @mixin spaces-reset {
   margin: 0;
   padding: 0;
   }
+
+@mixin link-styles-reset($text-color) {
+  text-decoration: none;
+  color: $text-color;
+}
 
 // styles to all elements
 * {
@@ -29,6 +37,6 @@ body {
 
 // internal sections
 @import "sections/header.scss";
+@import "sections/slider.scss";
 
 // internal blocks
-// @import "blocks/box.scss";
