@@ -1,17 +1,40 @@
 .slider {
   max-width: $max-width;
+  width: 100%;
   padding: 0 15px 200px;
   margin: 0 auto;
+  position: relative;
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  align-items: stretch;
+  align-items: flex-start;
 
   &__photo {
-    max-width: ($max-width - 30px)/2;
+    max-width: ($max-width - 15px)/2;
     border: 1px solid $c-yellow;
+    position: relative;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    // color: $c-yellow;
+
+      & a {
+        @include link-styles-reset($c-yellow);
+      }
+
+      &--left {
+        left: -55px;
+      }
+
+      &--right {
+        right: -45px;
+      }
   }
 
   &__image {
@@ -21,16 +44,23 @@
     object-fit: cover;
   }
 
-  &__decorarion {
+  &__decoration {
+    display: block;
+    position: absolute;
+    top: -90px;
+    left: 0;
+    right: 0;
+    bottom: -65px;
     width: 1px;
-    height: 100%;
+    height: 560px;
+    margin: 0 auto;
     text-indent: -9999px;
     background: $c-yellow;
-    margin: 0 80px;
   }
 
   &__info {
-    max-width: ($max-width - 30px)/2;
+    position: relative;
+    max-width: ($max-width - 15px)/2;
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
@@ -45,6 +75,16 @@
     font-size: 36px;
     font-weight: 900;
     letter-spacing: 0.7px;
+
+      &::after {
+        content: '';
+        display: block;
+        margin: 40px auto 20px;
+        padding: 0;
+        width: 100px;
+        height: 1px;
+        background: $c-yellow;
+      }
   }
 
   &__description {
@@ -54,6 +94,7 @@
   }
 
   &__social {
+    margin: 30px 0;
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
@@ -64,6 +105,37 @@
 
   &__link {
     display: block;
+    @include link-styles-reset(#cccccc);
+
+        &:hover {
+          color: $c-yellow;
+        }
+  }
+
+  &__text {
+    @include spaces-reset;
+    width: 420px;
+    text-align: center;
+    font-weight: 500;
+    color: $c-grey/2;
+
+      & + span {
+        display: inline-block;
+        width: 20px;
+        height: 4px;
+        background: $c-yellow;
+        margin: 20px 0 25px;
+      }
+
+      & + span::before,
+      & + span::after {
+        content: '';
+        display: block;
+        margin: 0 5px;
+        width: 10px;
+        height: 4px;
+        background: $c-yellow;
+      }
   }
 
   &__reference {
@@ -72,6 +144,30 @@
     @include link-styles-reset($c-grey);
     padding: 6px 12px;
     border: 1px solid $c-yellow;
+    font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
+  }
+}
+
+.navigation {
+  width: 100%;
+  margin-top: 100px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__item {
+    width: 12px;
+    height: 12px;
+    margin: 0 2.5px;
+    background: #ffffff;
+    border: solid 1px $c-yellow;
+    border-radius: 50%;
+
+      &:first-child, &:last-child {
+        background: $c-yellow;
+      }
   }
 }
