@@ -178,19 +178,24 @@ body {
     text-align: center;
     font-weight: 500;
     color: #333333; }
-    .slider__text + span {
-      display: inline-block;
-      width: 20px;
-      height: 4px;
-      background: #ffcc00;
-      margin: 20px 0 25px; }
-    .slider__text + span::before, .slider__text + span::after {
+  .slider__decorator {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 4px;
+    background: #ffcc00;
+    margin: 20px 0 25px; }
+    .slider__decorator::before, .slider__decorator::after {
       content: '';
+      position: absolute;
       display: block;
-      margin: 0 5px;
-      width: 10px;
-      height: 4px;
-      background: #ffcc00; }
+      width: 50%;
+      height: 100%;
+      background: inherit; }
+    .slider__decorator::before {
+      right: calc(100% + 5px); }
+    .slider__decorator::after {
+      left: calc(100% + 5px); }
   .slider__reference {
     display: block;
     margin: 0;
@@ -204,24 +209,27 @@ body {
     transition: background 0.3s ease-in; }
     .slider__reference:hover {
       background: #ffcc00; }
-
-.navigation {
-  width: 100%;
-  margin-top: 100px;
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-  .navigation__item {
-    width: 12px;
-    height: 12px;
-    margin: 0 2.5px;
-    background: #ffffff;
-    border: solid 1px #ffcc00;
-    border-radius: 50%; }
-    .navigation__item:first-child, .navigation__item:last-child {
-      background: #ffcc00; }
+  .slider__navigation {
+    width: 100%;
+    margin-top: 100px;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .slider__navigation b {
+      display: block;
+      width: 12px;
+      height: 12px;
+      margin: 0 2.5px;
+      background: #ffffff;
+      border: solid 1px #ffcc00;
+      border-radius: 50%;
+      transition: background 0.3s ease; }
+      .slider__navigation b:first-child, .slider__navigation b:last-child {
+        background: #ffcc00; }
+      .slider__navigation b:hover {
+        background: #ffffff; }
 
 /*CSS ANIMATION*/
 @-webkit-keyframes swing {

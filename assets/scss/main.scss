@@ -1,4 +1,5 @@
 // variables
+$c-white: #ffffff;
 $c-grey: #666666;
 $c-yellow: #ffcc00;
 $max-width: 1170px;
@@ -35,6 +36,6 @@ body {
 // internal sections
 @import "sections/header.scss";
 @import "sections/slider.scss";
-@import "blocks/animation.scss"
 
 // internal blocks
+@import "blocks/animation.scss"

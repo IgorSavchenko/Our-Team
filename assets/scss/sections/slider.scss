@@ -162,24 +162,33 @@
     text-align: center;
     font-weight: 500;
     color: $c-grey/2;
+  }
 
-      & + span {
-        display: inline-block;
-        width: 20px;
-        height: 4px;
-        background: $c-yellow;
-        margin: 20px 0 25px;
-      }
+  &__decorator {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 4px;
+    background: $c-yellow;
+    margin: 20px 0 25px;
 
-      & + span::before,
-      & + span::after {
-        content: '';
-        display: block;
-        margin: 0 5px;
-        width: 10px;
-        height: 4px;
-        background: $c-yellow;
-      }
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 50%;
+      height: 100%;
+      background: inherit;
+    }
+
+    &::before {
+      right: calc(100% + 5px);
+    }
+
+    &::after {
+      left: calc(100% + 5px);
+    }
   }
 
   &__reference {
@@ -196,27 +205,33 @@
         background: $c-yellow;
       }
   }
-}
 
-.navigation {
-  width: 100%;
-  margin-top: 100px;
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  &__navigation {
+    width: 100%;
+    margin-top: 100px;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  &__item {
-    width: 12px;
-    height: 12px;
-    margin: 0 2.5px;
-    background: #ffffff;
-    border: solid 1px $c-yellow;
-    border-radius: 50%;
+      b {
+        display: block;
+        width: 12px;
+        height: 12px;
+        margin: 0 2.5px;
+        background: $c-white;
+        border: solid 1px $c-yellow;
+        border-radius: 50%;
+        transition: background 0.3s ease;
 
-      &:first-child, &:last-child {
-        background: $c-yellow;
+          &:first-child, &:last-child {
+            background: $c-yellow;
+          }
+
+          &:hover {
+            background: $c-white;
+          }
       }
-  }
+    }
 }
