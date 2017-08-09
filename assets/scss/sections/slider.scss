@@ -11,6 +11,20 @@
   justify-content: space-around;
   align-items: flex-start;
 
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 560px;
+    top: -90px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    bottom: -65px;
+    background: $c-yellow;
+  }
+
   &__photo {
     max-width: ($max-width - 15px)/2;
     border: 1px solid $c-yellow;
@@ -50,57 +64,66 @@
 
   &__image {
     display: block;
-    max-width: 100%;
+    position: relative;
+    width: 100%;
     height: 100%;
     object-fit: cover;
+    // z-index: 2;
   }
 
-  // decorative elements around the photo
-  &__line {
+  // decorative elements around photo area
+  .image__borders {
     position: absolute;
-    display: block;
-    background: $c-yellow;
+    top: -15px;
+    right: -15px;
+    bottom: -15px;
+    left: -15px;
 
-      &--horizontal {
+      b {
+        position: absolute;
+        display: block;
         width: 100px;
-        height: 1px;
-      }
-
-      &--vertical {
-        width: 1px;
         height: 100px;
-      }
+        border-color: $c-yellow;
+        border-style: solid;
 
-      &--top {
-        top: -15px;
-      }
+        &:nth-child(1) {
+          border-width: 1px 0 0 1px;
+        }
 
-      &--bottom {
-        bottom: -15px;
-      }
+        &:nth-child(2) {
+          right: 0;
+          border-width: 1px 1px 0 0;
+        }
 
-      &--left {
-        left: -15px;
-      }
+        &:nth-child(3) {
+          right: 0;
+          bottom: 0;
+          border-width: 0 1px 1px 0;
+        }
 
-      &--right {
-        right: -15px;
+        &:nth-child(4) {
+          bottom: 0;
+          border-width: 0 0 1px 1px;
+        }
       }
   }
 
-  &__decoration {
-    display: block;
-    position: absolute;
-    top: -90px;
-    left: 0;
-    right: 0;
-    bottom: -65px;
-    width: 1px;
-    height: 560px;
-    margin: 0 auto;
-    text-indent: -9999px;
-    background: $c-yellow;
-  }
+
+
+  // &__decoration {
+  //   display: block;
+  //   position: absolute;
+  //   top: -90px;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: -65px;
+  //   width: 1px;
+  //   height: 560px;
+  //   margin: 0 auto;
+  //   text-indent: -9999px;
+  //   background: $c-yellow;
+  // }
 
   &__info {
     position: relative;
