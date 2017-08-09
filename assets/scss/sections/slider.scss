@@ -33,8 +33,7 @@
 
   &__arrow {
     position: absolute;
-    top: 180px;
-    transform: translateY(-50%);
+    top: 170px;
     font-size: 40px;
     transition: all 0.3s ease;
 
@@ -51,13 +50,13 @@
       }
 
       &--left:hover {
-        -webkit-transform: translateX(-1px);
-        transform: translateX(-1px);
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px);
       }
 
       &--right:hover {
-        -webkit-transform: translateX(1px);
-        transform: translateX(1px);
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
       }
 
   }
@@ -108,22 +107,6 @@
         }
       }
   }
-
-
-
-  // &__decoration {
-  //   display: block;
-  //   position: absolute;
-  //   top: -90px;
-  //   left: 0;
-  //   right: 0;
-  //   bottom: -65px;
-  //   width: 1px;
-  //   height: 560px;
-  //   margin: 0 auto;
-  //   text-indent: -9999px;
-  //   background: $c-yellow;
-  // }
 
   &__info {
     position: relative;
@@ -181,7 +164,8 @@
 
   &__text {
     @include spaces-reset;
-    width: 420px;
+    padding: 0 15px;
+    width: 450px;
     text-align: center;
     font-weight: 500;
     color: $c-grey/2;

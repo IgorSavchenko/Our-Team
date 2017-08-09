@@ -90,8 +90,7 @@ body {
     position: relative; }
   .slider__arrow {
     position: absolute;
-    top: 180px;
-    transform: translateY(-50%);
+    top: 170px;
     font-size: 40px;
     transition: all 0.3s ease; }
     .slider__arrow--left {
@@ -100,13 +99,14 @@ body {
       right: -45px; }
     .slider__arrow a {
       text-decoration: none;
-      color: #ffcc00; }
+      color: #ffcc00;
+      pointer-events: auto; }
     .slider__arrow--left:hover {
-      -webkit-transform: translateX(-1px);
-      transform: translateX(-1px); }
+      -webkit-transform: translateX(-5px);
+      transform: translateX(-5px); }
     .slider__arrow--right:hover {
-      -webkit-transform: translateX(1px);
-      transform: translateX(1px); }
+      -webkit-transform: translateX(5px);
+      transform: translateX(5px); }
   .slider__image {
     display: block;
     position: relative;
@@ -178,11 +178,13 @@ body {
   .slider__link {
     display: block;
     text-decoration: none;
-    color: #cccccc; }
+    color: #cccccc;
+    pointer-events: auto; }
   .slider__text {
     margin: 0;
     padding: 0;
-    width: 420px;
+    padding: 0 15px;
+    width: 450px;
     text-align: center;
     font-weight: 500;
     color: #333333; }
@@ -210,6 +212,7 @@ body {
     padding: 0;
     text-decoration: none;
     color: #666666;
+    pointer-events: auto;
     padding: 6px 12px;
     border: 1px solid #ffcc00;
     font-family: 'Open Sans', sans-serif;
